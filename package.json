@@ -4,10 +4,10 @@
   "dependencies": {
     "@opam/lwt": "*",
     "@esy-ocaml/substs": "^0.0.1",
-    "@opam/reason": "^3.4.0",
+    "@esy-ocaml/reason": "^3.6.2",
     "refmterr": "*",
-    "@opam/dune": "*",
-    "@opam/ocaml-migrate-parsetree": "*",
+    "@opam/dune": "^2.5.1",
+    "@opam/ppxlib": "0.13.0",
     "@opam/ppx_tools_versioned": "*",
     "@opam/uchar": "*",
     "@opam/cmdliner": "*",
@@ -18,34 +18,98 @@
   },
   "devDependencies": {
     "@opam/ocamlformat": "*",
-    "@opam/merlin": "*",
     "@reason-native/console": "*",
-    "ocaml": " ~ 4.8.0",
-    "@opam/ppx_expect": "*"
+    "ocaml": "~4.10.0",
+    "@opam/ppx_expect": "*",
+    "@opam/merlin": "3.3.6",
+    "@opam/ocaml-lsp-server": "github:ocaml/ocaml-lsp:ocaml-lsp-server.opam"
   },
   "resolutions": {
     "dune": "2.1.0",
-    "@opam/merlin-extend": "0.4"
+    "ocaml": "EduardoRFS/ocaml:package.json#af9e63682f76cee67099a23e1bb17a66fa7809d1"
   },
   "optDependencies": {},
   "esy": {
     "buildDev": [
-      [ "refmterr", "dune", "build", "-p", "js_of_ocaml,js_of_ocaml-compiler,js_of_ocaml-ppx,js_of_ocaml-lwt,js_of_ocaml-ppx_deriving_json"],
-      [ "refmterr", "dune", "build", "--profile=release", "rehack_tests/hello_world/hello_world.bc"],
-      [ "refmterr", "dune", "build", "--profile=release", "rehack_tests/my-lib/MyLib.cma"],
-      [ "refmterr", "dune", "build", "--profile=release", "rehack_tests/SeparateCompilation/SeparateCompilation.cma"],
-      [ "refmterr", "dune", "build", "--profile=release", "rehack_tests/HashBugReproduce/HashBugReproduce.cma"],
-      [ "refmterr", "dune", "build", "--profile=release", "rehack_tests/strings/strings.bc"],
-      [ "refmterr", "dune", "build", "--profile=release", "rehack_tests/calls/Calls.cma"],
-      [ "refmterr", "dune", "build", "--profile=release", "rehack_tests/recursion/Recursion.cma"]
+      [
+        "refmterr",
+        "dune",
+        "build",
+        "-p",
+        "js_of_ocaml,js_of_ocaml-compiler,js_of_ocaml-ppx,js_of_ocaml-lwt,js_of_ocaml-ppx_deriving_json"
+      ],
+      [
+        "refmterr",
+        "dune",
+        "build",
+        "--profile=release",
+        "rehack_tests/hello_world/hello_world.bc"
+      ],
+      [
+        "refmterr",
+        "dune",
+        "build",
+        "--profile=release",
+        "rehack_tests/my-lib/MyLib.cma"
+      ],
+      [
+        "refmterr",
+        "dune",
+        "build",
+        "--profile=release",
+        "rehack_tests/SeparateCompilation/SeparateCompilation.cma"
+      ],
+      [
+        "refmterr",
+        "dune",
+        "build",
+        "--profile=release",
+        "rehack_tests/HashBugReproduce/HashBugReproduce.cma"
+      ],
+      [
+        "refmterr",
+        "dune",
+        "build",
+        "--profile=release",
+        "rehack_tests/strings/strings.bc"
+      ],
+      [
+        "refmterr",
+        "dune",
+        "build",
+        "--profile=release",
+        "rehack_tests/calls/Calls.cma"
+      ],
+      [
+        "refmterr",
+        "dune",
+        "build",
+        "--profile=release",
+        "rehack_tests/recursion/Recursion.cma"
+      ]
     ],
     "build": [
-      [ "refmterr", "dune", "build", "-p", "js_of_ocaml,js_of_ocaml-compiler,js_of_ocaml-lwt"]
+      [
+        "refmterr",
+        "dune",
+        "build",
+        "-p",
+        "js_of_ocaml,js_of_ocaml-compiler,js_of_ocaml-lwt"
+      ]
     ],
     "install": [
-      ["esy-installer", "js_of_ocaml.install"],
-      ["esy-installer", "js_of_ocaml-compiler.install"],
-      ["esy-installer", "js_of_ocaml-lwt.install"]
+      [
+        "esy-installer",
+        "js_of_ocaml.install"
+      ],
+      [
+        "esy-installer",
+        "js_of_ocaml-compiler.install"
+      ],
+      [
+        "esy-installer",
+        "js_of_ocaml-lwt.install"
+      ]
     ]
   },
   "scripts": {
